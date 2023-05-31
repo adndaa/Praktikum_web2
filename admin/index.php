@@ -75,6 +75,21 @@ if ($_SESSION['username'] == '') {
                         case "mahasiswa-update";
                             include "../mahasiswa/mahasiswa_update.php";
                             break;
+                        case "matakuliah-show";
+                            include "../matakuliah/matakuliah_show.php";
+                            break;
+                        case "matakuliah-add";
+                            include "../matakuliah/matakuliah_add.php";
+                            break;
+                        case "matakuliah-edit";
+                            include "../matakuliah/matakuliah_edit.php";
+                            break;
+                        case "matakuliah-delete";
+                            include "../matakuliah/matakuliah_delete.php.php";
+                            break;
+                        case "matakuliah-update";
+                            include "../matakuliah/mahasiswa_update.php";
+                            break;
                             // user
                         case "user-add";
                             include "../user/user_add.php";

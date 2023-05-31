@@ -1,13 +1,13 @@
 <?php
 if (isset($_POST['Submit'])) {
     $kode = $_POST['kode'];
-    $nama = $_POST['Nama'];
+    $nama = $_POST['nama'];
     $sks = $_POST['sks'];
     $semester = $_POST['semester'];
 
-    $result = mysqli_query($con, "INSERT INTO matakuliah(id,kode,Nama,sks,semester)
-VALUES('$kode','$nama','$sks','$semester')") or die(mysqli_error($con));
-    header("Location:?page=matakuliah-show");
+    $result = mysqli_query($con, "INSERT INTO matakuliah (kode, Nama, sks, semester)
+VALUES ('$kode', '$nama', '$sks', '$semester')") or die(mysqli_error($con));
+    header("Location: ?page=matakuliah-show");
 }
 ?>
 <div class="row">
@@ -19,24 +19,25 @@ VALUES('$kode','$nama','$sks','$semester')") or die(mysqli_error($con));
             <div class="card-body">
                 <form method="POST" action="?page=matakuliah-add" class="form-horizontal">
                     <div class="form-group">
-                        <label for="nama" class="ontrol-label">kode</label>
-                        <input type="text" class="form-control" name="kode" placeholder="Masukan kode..." required>
+                        <label for="kode" class="control-label">Kode</label>
+                        <input type="text" class="form-control" name="kode" placeholder="Masukkan kode..." required>
                     </div>
                     <div class="form-group">
-                        <label for="nama" class="control-label">nama</label>
-                        <input type="text" class="form-control" name="nama" placeholder="Masukan Nama ..." required>
+                        <label for="nama" class="control-label">Nama</label>
+                        <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama..." required>
                     </div>
                     <div class="form-group">
-                        <label for="alamat" class="control-label">sks</label>
-                        <input type="text" class="form-control" name="sks" placeholder="Masukan sks..." required>
+                        <label for="sks" class="control-label">SKS</label>
+                        <input type="text" class="form-control" name="sks" placeholder="Masukkan SKS..." required>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="semester" class="control-label">semester</label>
-                            <input type="text" class="form-control" name="semester" placeholder="Masukan semester..." required>
+                            <label for="semester" class="control-label">Semester</label>
+                            <input type="text" class="form-control" name="semester" placeholder="Masukkan semester..." required>
                         </div>
-                        <input type="submit" name="Submit" class="btn btn-primary" value="Simpan">
-                        <input type="reset" name="reset" class="btn btn-warning" value="Reset">
+                    </div>
+                    <input type="submit" name="Submit" class="btn btn-primary" value="Simpan">
+                    <input type="reset" name="reset" class="btn btn-warning" value="Reset">
                 </form>
             </div>
         </div>
